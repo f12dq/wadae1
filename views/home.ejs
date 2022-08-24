@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AE1 App Home page</title>
+        <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'/>
+        <link rel="stylesheet" href="./css/bootstrap.css" >
+        <link rel="stylesheet" href="css/style.css" >
+    </head>
+
+    <body>
+        <%- include('common/header'); -%>
+        <!-- Form to Search for an accommodation! -->
+        <div class="container-md">
+            <div>
+                <div class="container-lg"></div>
+                    <div class="row">
+                        <h2>Search a place -from workfor database</h2>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col">
+                            <label for="accType"> Type</label>
+                            <input type="text" class="form-control" id="accType">
+                        </div>
+                        <div class="mb-3 col">
+                            <label for="accLocation">Location </label>
+                            <input type="text" class="form-control" id="accLocation">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="mb-3 col"></div>
+                        <div class="mb-3 col"></div>
+                        <div class="mb-3 col">
+                            <button type="submit" class="btn btn-primary w-100" id="accSearchBtn">Search!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toggle View -->
+		<!-- 	Added to make sure the site was still usable if the openstreetmaps had failed.	 -->
+        <div class="container-md">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="toggleMapView">
+                <label class="form-check-label" for="toggleMapView">Toggle Table/Text View</label>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="alert alert-primary" role="alert" id="messageBox"></div>
+
+        <!-- Section dividing Form and Results -->
+        <section class="p-3"></section>
+        
+        <!-- Map Results -->
+        <div class="container-md" id="mapView">
+            
+        </div>
+
+
+        <!-- Results Table to display accommodation(s) found. -->
+        <table class="table" id="textView">
+            <thead>
+                <tr>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Location</th>
+                    <th class="text-center">Type</th>
+                    <th class="text-center">Latitude, Longitude</th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody id="accommodations">
+                <tr>
+                    <td class="text-center">Example</td>
+                    <td class="text-center">Birmingham</td>
+                    <td class="text-center">Solent</td>
+                    <td class="text-center">100, -10</td>
+                    <td class="text-center">
+                        <a href="/" id= "accBookBtn" class='btn btn-secondary btn-xs'>
+                            Book (no action)
+                        </a> 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+    <script type='text/javascript' src="./js/bootstrap.bundle.js" ></script>
+    <script type='text/javascript' src="scripts/accSearch.js" ></script>
+    <script type='text/javascript' src="scripts/bookingScript.js" ></script>    
+	<script type='text/javascript' src="scripts/viewSwitch.js" ></script>
+    <script type='text/javascript' src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'></script>
+    <script type='text/javascript' src='scripts/mapapp.js'></script>
+</html>

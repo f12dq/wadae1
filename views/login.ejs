@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home page</title>
+        <link rel='stylesheet' href='https://unpkg.com/leaflet@1.7.1/dist/leaflet.css'/>
+        <link rel="stylesheet" href="./css/bootstrap.css" >
+        <link rel="stylesheet" href="css/style.css" >
+    </head>
+
+    <body>
+		<%- include('common/header'); -%>
+		
+		<div id="logreg-forms" class="container-md">
+        	<form action="/login" method="post" class="form-signin container-md">
+				<h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+				<input type="text" id="username" name="username" class="form-control" placeholder="Username" required="" autofocus="">
+				<input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+				<hr>
+				<button class="btn btn-success btn-block" type="submit" id="signin"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+				<a href="#" id="forgot_pswd">Forgot password?</a>
+				<hr>
+				<!-- <p>Don't have an account!</p>  -->
+				<button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</button>
+			</form>
+    	</div>
+
+		
+	</body>
+	
+    <script type='text/javascript' src="./js/bootstrap.bundle.js" ></script>
+    <script type='text/javascript' src='https://unpkg.com/leaflet@1.7.1/dist/leaflet.js'></script>
+</html>
